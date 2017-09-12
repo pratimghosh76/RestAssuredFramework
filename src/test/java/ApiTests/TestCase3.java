@@ -52,29 +52,7 @@ public class TestCase3 {
         htm.getCountryDetails(jp);
     }
 
-    @Test
-    public void T02_SearchTermTest() {
-        //Verify the title is correct
-        Assert.assertEquals("Title is wrong!", ("Search results for \"paris hilton\""), jp.get("api-info.title"));
-    }
-
-    @Test
-    public void T03_verifyOnlyFiveVideosReturned() {
-        //Verify that only 5 video entries were returned
-        Assert.assertEquals("Video Size is not equal to 5", 5, htm.getVideoIdList(jp).size());
-    }
-
-    @Test
-    public void T04_duplicateVideoVerification() {
-        //Verify that there is no duplicate video
-        assertTrue("Duplicate videos exist!", htm.findDuplicateVideos(htm.getVideoIdList(jp)));
-    }
-
-    @Test
-    public void T05_printAttributes() {
-        //Print video title, pubDate & duration
-        printTitlePubDateDuration(jp);
-    }
+  
 */
    
     @Test

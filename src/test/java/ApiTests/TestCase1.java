@@ -47,30 +47,7 @@ public class TestCase1 {
         htm.getCountryDetails(jp);
     }
 
-    @Test
-    public void T02_SearchTermTest() {
-        //Verify the title is correct
-        Assert.assertEquals("Title is wrong!", ("Search results for \"paris hilton\""), jp.get("api-info.title"));
-    }
-
-    @Test
-    public void T03_verifyOnlyFiveVideosReturned() {
-        //Verify that only 5 video entries were returned
-        Assert.assertEquals("Video Size is not equal to 5", 5, htm.getVideoIdList(jp).size());
-    }
-
-    @Test
-    public void T04_duplicateVideoVerification() {
-        //Verify that there is no duplicate video
-        assertTrue("Duplicate videos exist!", htm.findDuplicateVideos(htm.getVideoIdList(jp)));
-    }
-
-    @Test
-    public void T05_printAttributes() {
-        //Print video title, pubDate & duration
-        printTitlePubDateDuration(jp);
-    }
-*/
+  */
    
     @Test
     public void T01_printAttributes() throws InterruptedException{
@@ -101,9 +78,9 @@ public class TestCase1 {
 
     public void printCountryDetails (JsonPath jp) {
         for(int i=0; i <htm.getCountryDetails(jp).size(); i++ ) {
-            System.out.println("Title: " + jp.get("RestResponse.result.name[" + i + "]"));
-            System.out.println("pubDate: " + jp.get("RestResponse.result.alpha2_code[" + i + "]"));
-            System.out.println("duration: " + jp.get("RestResponse.result.alpha3_code[" + i + "]"));
+            System.out.println("Country: " + jp.get("RestResponse.result.name[" + i + "]"));
+            System.out.println("alphaCode2: " + jp.get("RestResponse.result.alpha2_code[" + i + "]"));
+            System.out.println("alphaCode3: " + jp.get("RestResponse.result.alpha3_code[" + i + "]"));
             System.out.print("\n");
             
         }
